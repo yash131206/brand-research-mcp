@@ -193,6 +193,6 @@ if __name__ == "__main__":
     token = os.environ.get("MCP_API_TOKEN", "").strip()
     if not token:
         raise RuntimeError("Set MCP_API_TOKEN before starting the remote server.")
-    app = BearerAuthMiddleware(mcp.streamable_http_app(), token)
+    app = BearerAuthMiddleware(mcp.streamable_http_app(host="0.0.0.0"), token)
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", "8000")))
