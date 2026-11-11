@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: brand-research-mcp
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: MCP_API_TOKEN
+        generateValue: true
