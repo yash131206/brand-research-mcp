@@ -28,7 +28,7 @@ Set `MCP_API_TOKEN` in your shell, then:
 python server.py
 ```
 
-The MCP endpoint is `http://localhost:8000/mcp`. Requests must include:
+The MCP endpoint is `http://localhost:8000/mcp`. The cloud app is configured with `host="0.0.0.0"` so the SDK does not apply its localhost-only DNS-rebinding allowlist. Requests must include:
 
 ```http
 Authorization: Bearer YOUR_MCP_API_TOKEN
